@@ -1,22 +1,94 @@
-<table cellpadding="4" cellspacing="0" style="border: double 5px hotpink; width: 90%px;"><tbody>
-<tr><td style="border: double 5px hotpink;"><div style="text-align: left;">
-สติ๊กเกอร์ออกใหม่ 22 ม.ค. 62  </div>
-</td></tr>
-</tbody></table>
-<br />
-<table align="center" border="1" id="data" style="width: 80%px;"><tbody>
-<tr></tr>
-<tr>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13353"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13353/android/thumbnail_shop.png" /></a>MM13306</td>                     <td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13341"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13341/android/thumbnail_shop.png" /></a>MM13288</td>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13292"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13292/android/thumbnail_shop.png" /></a>MM13287</td>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13293"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13293/android/thumbnail_shop.png" /></a>MM13305</td></tr>
-<tr>
-</tr>
-<tr>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13342"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13342/android/thumbnail_shop.png" /></a>MM13306</td>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13325"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13325/android/thumbnail_shop.png" /></a>MM13288</td>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13344"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13344/android/thumbnail_shop.png" /></a>MM13287</td>
-<td id="”4?" width="”20%”"><a href="https://line.me/S/sticker/13343"><img border="0" src="http://dl.stickershop.line.naver.jp/products/0/0/1/13343/android/thumbnail_shop.png" /></a>MM13305</td></tr>
-<tr>
-</tr>
-</tbody></table>
+#!/usr/local/bin/ruby
+# -*- coding: utf-8 -*-
+#
+#This script gets LINE Stickers.(for iPhone)
+# http://shutingrz.hatenablog.com/entry/2014/08/13/042413
+#
+# gem install cfpropertylist
+#
+
+require 'json'
+require 'net/http'
+require 'uri'
+require 'cfpropertylist'
+require "fileutils"
+
+id = ARGV[0]
+stdir = "#{id}.1.linestk"
+plist = CFPropertyList::List.new
+
+plistName = "productInfo.plist"
+
+puts "productInfo.meta downloading..."
+url = URI.parse("http://dl.stickershop.line.naver.jp/")
+begin
+	res = Net::HTTP.start(url.host, url.port) {|http|
+	  http.get("/products/0/0/1/#{id}/iphone/productInfo.meta")
+	}
+rescue Exception
+	puts "Download error! Please check Internet Connection."
+	exit
+end
+
+begin
+	js = JSON.parse(res.body)
+rescue Exception
+	puts "JSON Parse error! Please check StickerID." 
+	exit
+end
+
+puts "directory creating..."
+FileUtils.mkdir_p(stdir) unless FileTest.exist?(stdir)
+
+
+puts "productInfo.plist creating..."
+
+data = Array.new
+sp = Hash.new
+js.each do |param|
+	data << param
+end
+
+data.each do |line|
+	if (line[1].class == Array || line[1].class == Hash) then
+		hashs = Hash.new
+		line[1].each do |value|
+			hashs.store(value[0],value[1])
+		end
+	end
+	sp.store(line[0],line[1])
+end
+
+
+plist.value = CFPropertyList.guess(sp)
+plist.save("#{stdir}/#{plistName}", CFPropertyList::List::FORMAT_BINARY)
+
+
+js["stickers"].each do |ids|
+	imgid = ids["id"]
+	puts "#{imgid}@2x.png downloading..."
+	res = Net::HTTP.start(url.host, url.port) {|http|
+		http.get("/products/0/0/1/#{id}/PC/stickers/#{imgid}.png")
+	}
+	File.open("#{stdir}/#{imgid}@2x.png", "wb") {|f| f.write res.body}
+
+	puts "#{imgid}@2x_key.png downloading..."
+	res = Net::HTTP.start(url.host, url.port) {|http|
+		http.get("/products/0/0/1/#{id}/PC/stickers/#{imgid}_key.png")
+	}
+	File.open("#{stdir}/#{imgid}@2x_key.png", "wb") {|f| f.write res.body}
+end
+
+puts "tab_on@2x.png downloading..."
+res = Net::HTTP.start(url.host, url.port) {|http|
+	http.get("/products/0/0/1/#{id}/android/tab_on.png")
+}
+File.open("#{stdir}/tab_on@2x.png", "wb") {|f| f.write res.body}
+
+puts "tab_off@2x.png downloading..."
+res = Net::HTTP.start(url.host, url.port) {|http|
+	http.get("/products/0/0/1/#{id}/android/tab_off.png")
+}
+File.open("#{stdir}/tab_off@2x.png", "wb") {|f| f.write res.body}
+
+puts "Finished!"
