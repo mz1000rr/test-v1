@@ -187,7 +187,7 @@ function initializeApp(data) {
         liff.sendMessages([
  {
     "type": "template",
-    "altText": "Sticker Update",
+    "altText": "test bigsticker",
     "template": {
       "type": "image_carousel",
       "columns": [
@@ -195,7 +195,6 @@ function initializeApp(data) {
           "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/3682827/IOS/main_animation@2x.png",
           "action": {
             "type": "message",
-            "label": "แตะที่ภาพ",
             "text": "line://shop/detail/3682827"
           }
         },
@@ -265,7 +264,6 @@ function initializeApp(data) {
       ]
     }
   }
-}
     ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
