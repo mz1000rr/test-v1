@@ -186,34 +186,24 @@ function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([
         {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "hero": {
-      "type": "image",
-      "url": "https://sv1.picz.in.th/images/2019/03/04/tYoQxl.jpg",
-      "size": "xxl",
-      "aspectRatio": "1:1",
-      "aspectMode": "fit"
-    },
-    "footer": {
-      "type": "box",
-      "layout": "horizontal",
-      "contents": [
-        {
-          "type": "button",
-          "action": {
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/04/tYoQxl.jpg",
+        "text": "MAMEAW STICKERLINE",
+        "actions": [
+          {
             "type": "uri",
             "label": "ติดต่อ",
             "uri": "http://line.me/ti/p/~m-shop"
-          },
-          "color": "#0C0C0C",
-          "style": "primary"
-        }
-      ]
-    }
+          }
+        ]
+      }
+    ]
   }
 }
     ]).then(function () {
