@@ -1,103 +1,100 @@
-window.onload = function (e) {
-    liff.init(function (data) {
-        initializeApp(data);
-    });
-};
+# LIFF Starter App
 
-function initializeApp(data) {
-    document.getElementById('languagefield').textContent = data.language;
-    document.getElementById('viewtypefield').textContent = data.context.viewType;
-    document.getElementById('useridfield').textContent = data.context.userId;
-    document.getElementById('utouidfield').textContent = data.context.utouId;
-    document.getElementById('roomidfield').textContent = data.context.roomId;
-    document.getElementById('groupidfield').textContent = data.context.groupId;
+This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.me/en/docs/liff/overview/). 
 
-    // openWindow call
-    document.getElementById('openwindowbutton').addEventListener('click', function () {
-        liff.openWindow({
-            url: 'https://line.me'
-        });
-    });
+## Prerequisites
+* [A channel on the LINE Developers Console](https://developers.line.me/en/docs/liff/getting-started/) for your application.
+* [A channel access token](https://developers.line.me/en/docs/liff/getting-started/#preparing-channel-access-token)
+* A [Heroku account](https://www.heroku.com)
 
-    // closeWindow call
-    document.getElementById('closewindowbutton').addEventListener('click', function () {
-        liff.closeWindow();
-    });
+## Deploying the application
 
-    // sendMessages call
-    document.getElementById('sendmessagebutton').addEventListener('click', function () {
-        liff.sendMessages([
-        {
-            "type": "template",
-            "altText": "this is a carousel template",
-            "template": {
-                "type": "carousel",
-                "columns": [{
-                    "title": "New Open Store",
-                    "text": "Opening Event",
-                    "actions": [
-                        {
-                            "type": "uri",
-                            "label": "LIFF APP",
-                            "uri": "line://app/1649301550-PL5ml2vO"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://ssl.pstatic.net/linefriends/wp-content/uploads/2017/03/char_choco_name.png"
-                }],
-                "imageAspectRatio": "rectangle"
-            }
-        }
-    ]).then(function () {
-            // window.alert("Message sent");
-            liff.closeWindow();
-        }).catch(function (error) {
-            window.alert("Error sending message: " + error);
-        });
-    });
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mz1000rr)
 
-    // get access token
-    document.getElementById('getaccesstoken').addEventListener('click', function () {
-        const accessToken = liff.getAccessToken();
-        document.getElementById('accesstokenfield').textContent = accessToken;
-        toggleAccessToken();
-    });
+1. Click the above "Deploy to Heroku button".
+2. Fill in the required information on the "Create a New App" page in Heroku.
+3. Select Deploy app and confirm that your app is successfully deployed.
+4. Record the app URL (https://{Heroku app name}.herokuapp.com). You will set this URL when you add the app to LIFF.
 
-    // get profile call
-    document.getElementById('getprofilebutton').addEventListener('click', function () {
-        liff.getProfile().then(function (profile) {
-            document.getElementById('useridprofilefield').textContent = profile.userId;
-            document.getElementById('displaynamefield').textContent = profile.displayName;
+## Adding the starter app to LIFF
 
-            const profilePictureDiv = document.getElementById('profilepicturediv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            const img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = "Profile Picture";
-            profilePictureDiv.appendChild(img);
+Add the app to LIFF. For more information, see [Adding a LIFF app](https://developers.line.me/en/docs/liff/registering-liff-apps/).
 
-            document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-            toggleProfileData();
-        }).catch(function (error) {
-            window.alert("Error getting profile: " + error);
-        });
-    });
-}
+## Running the application
 
-function toggleAccessToken() {
-    toggleElement('accesstokendata');
-}
+1. To run this application, host these files on a web server.
+2. Set your LIFF's entryUrl to point to index.html.
+3. Open your LIFF in the LINE app.
 
-function toggleProfileData() {
-    toggleElement('profileinfo');
-}
 
-function toggleElement(elementId) {
-    const elem = document.getElementById(elementId);
-    if (elem.offsetWidth > 0 && elem.offsetHeight > 0) {
-        elem.style.display = "none";
-    } else {
-        elem.style.display = "block";
-    }
-}
+## Trying it out
+
+To open the LIFF app within the LINE app, follow the steps below.
+
+1. Tap `line://app/{liffId}` on the chat screen of the LINE app. `{liffId}` is the LIFF app ID returned to the API request to add the app to LIFF.
+
+2. Agree to grant the required permissions to the LIFF app.
+
+3. When opening the LIFF app, the following four buttons and the content of received information are displayed.
+
+    - Open Window: Opens `https://line.me` in the in-app browser of the LINE app.
+    - Close Window: Closes the LIFF app.
+    - Get Access Token: Gets the current user's access token.
+    - Get Profile: Gets the current user's profile.
+    - Send Messages: Sends a sample message on behalf of the user if the LIFF app is opened in the chat screen.
+
+
+For API calls associated with the buttons, see [Calling the LIFF API](https://developers.line.me/en/docs/liff/developing-liff-apps#calling-liff-api). For the received information, see [Initializing the LIFF app](https://developers.line.me/en/docs/liff/developing-liff-apps#initializing-liff-app).
+
+## Checking logs
+
+To get more information, you can check the logs of your app using [Heroku CLI][heroku-cli].
+
+1. Log in to Heroku from the command line.
+
+    ```shell
+    $ heroku login
+    ```
+
+1. Check the logs.
+
+    ```shell
+    $ heroku logs --app {Heroku app name} --tail
+    ```
+
+## Downloading and making changes to the starter app
+
+You can download the starter app to your local machine to test and make changes for yourself. You can then deploy the app to a web server of your choice. Here, we'll look at how to make and deploy changes to the Heroku app you created in the previous step.
+
+1. Make sure you have the following installed
+    - [Git](https://git-scm.com/)
+
+1. Clone the [line-liff-starter](https://github.com/line/line-liff-starter) GitHub repository.
+
+    ```shell
+    git clone https://github.com/line/line-liff-starter.git
+    ```
+
+1. `cd` into your Git directory.
+1. Add a remote for Heroku to your local repository.
+
+    ```shell
+    $ heroku git:remote -a {Heroku app name}
+    ```
+
+1. Make edits and commit changes (optional).
+
+    ```shell
+    $ git add .
+    $ git commit -m "First commit"
+    ```
+
+1. Push changes to Heroku master.
+
+    ```shell
+    $ git push heroku master
+
+
+[console]: /console/ 
+[heroku]: https://www.heroku.com/
+[heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
