@@ -186,49 +186,26 @@ function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([
  {
-    "type": "template",
-    "altText": "test sticker",
-    "template": {
-      "type": "image_carousel",
-      "columns": [
-        {
-          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/3682827/IOS/main_animation@2x.png",
-          "action": {
-            "type": "message",
-            "text": "line://shop/detail/3682827"
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/04/tYoQxl.jpg",
+        "text": "MAMEAW STICKERLINE",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "ติดต่อ",
+            "uri": "http://line.me/ti/p/~m-shop"
           }
-        },
-        {
-          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/11149/IOS/main_animation@2x.png",
-          "action": {
-            "type": "message",
-            "text": "line://shop/detail/11149"
-          }
-        },
-        {
-          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13561/IOS/main_popup.png",
-          "action": {
-            "type": "message",
-            "text": "line://shop/detail/13561"
-          }
-        },
-        {
-          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/3682827/IOS/main_animation@2x.png",
-          "action": {
-            "type": "message",
-            "text": "line://shop/detail/3682827"
-          }
-        },
-        {
-          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/11149/IOS/main_animation@2x.png",
-          "action": {
-            "type": "message",
-            "text": "line://shop/detail/11149"
-          }
-        }
-      ]
-    }
+        ]
+      }
+    ]
   }
+}
     ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
