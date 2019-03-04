@@ -219,44 +219,250 @@ function initializeApp(data) {
         liff.sendMessages([
 
         {
-
-            "type": "template",
-
-            "altText": "this is a carousel template",
-
-            "template": {
-
-                "type": "carousel",
-
-                "columns": [{
-
-                    "title": "New Open Store",
-
-                    "text": "Opening Event",
-
-                    "actions": [
-
-                        {
-
-                            "type": "uri",
-
-                            "label": "LIFF APP",
-
-                            "uri": "line://app/1649301550-PL5ml2vO"
-
-                        }
-
-                    ],
-
-                    "thumbnailImageUrl": "https://ssl.pstatic.net/linefriends/wp-content/uploads/2017/03/char_choco_name.png"
-
-                }],
-
-                "imageAspectRatio": "rectangle"
-
-            }
-
+    "type": "flex",
+    "altText": "ข้อความโฆษณา",
+    "contents": {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
+          }
         }
+      ]
+    }
+  }
 
     ]).then(function () {
 
