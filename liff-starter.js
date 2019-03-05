@@ -57,173 +57,44 @@ function initializeApp(data) {
         liff.sendMessages([
 
        {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "spacing": "md",
-      "contents": [
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "margin": "xs",
-          "contents": [
-            {
-              "type": "image",
-              "url": "https://www.printcafe.asia/wp-content/uploads/2018/06/kbank-icon.png",
-              "size": "full",
-              "aspectRatio": "1:1",
-              "aspectMode": "fit",
-              "backgroundColor": "#FFFFFF",
-              "action": {
-                "type": "message",
-                "text": "กสิกร  7482733810"
-              }
-            },
-            {
-              "type": "separator",
-              "margin": "md"
-            },
-            {
-              "type": "image",
-              "url": "https://f.ptcdn.info/801/022/000/1409170288-b60f8c1e0e-o.png",
-              "action": {
-                "type": "message",
-                "text": "กรุงเทพ  1185039490"
-              }
-            },
-            {
-              "type": "separator",
-              "margin": "md"
-            },
-            {
-              "type": "image",
-              "url": "https://www.isranews.org/images/thumbnails/images/2018/thaireform/08/scb2408-fill-500x500.jpg",
-              "action": {
-                "type": "message",
-                "text": "ไทยพาณิชย์  1702519204"
-              }
-            }
-          ]
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "contents": [
-            {
-              "type": "image",
-              "url": "https://i0.wp.com/www.proppular.com/wp-content/uploads/2015/11/ktb-logo-1024x1024.jpg?resize=300,300&ssl=1",
-              "action": {
-                "type": "message",
-                "text": "กรุงไทย  7680144273"
-              }
-            },
-            {
-              "type": "separator",
-              "margin": "md"
-            },
-            {
-              "type": "image",
-              "url": "https://pbs.twimg.com/profile_images/936198120873930753/iyEeh0ga_400x400.jpg",
-              "action": {
-                "type": "message",
-                "text": "ธหารไทย  2122187384"
-              }
-            },
-            {
-              "type": "separator",
-              "margin": "md"
-            },
-            {
-              "type": "image",
-              "url": "https://lh3.googleusercontent.com/ovSLL4E--Mo_nJg4XHE8k_9KYCpAbn6FB0FLMgzl6lyNubIJoJxdvWyEnM7sN02DD5I=s180-rw",
-              "action": {
-                "type": "message",
-                "text": "กรุงศรีฯ  5221059314"
-              }
-            }
-          ]
-        },
-        {
-          "type": "box",
-          "layout": "horizontal",
-          "contents": [
-            {
-              "type": "image",
-              "url": "https://www.mymobygsb.com/images/logo.png",
-              "aspectMode": "cover",
-              "action": {
-                "type": "message",
-                "text": "ออมสิน  020041983808"
-              }
-            },
-            {
-              "type": "separator",
-              "margin": "md"
-            },
-            {
-              "type": "image",
-              "url": "https://www.it24hrs.com/wp-content/uploads/2018/03/promptpay-update-stats-2018-p01.jpg",
-              "aspectMode": "cover",
-              "action": {
-                "type": "message",
-                "text": "พร้อมเปย์  0948296328"
-              }
-            },
-            {
-              "type": "separator",
-              "margin": "md"
-            },
-            {
-              "type": "image",
-              "url": "https://www.gmkfreelogos.com/logos/T/img/Thank_You.gif",
-              "size": "3xl",
-              "aspectRatio": "1:1",
-              "aspectMode": "fit",
-              "action": {
-                "type": "message",
-                "text": "ขอบคุณที่ใช้บริการครับ"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    "footer": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "กรุณาเลือกธนาคารที่จะชำระเงิน",
-          "align": "center",
-          "weight": "bold",
-          "color": "#9900FF",
-          "wrap": true
-        },
-        {
-          "type": "separator",
-          "margin": "md"
-        },
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "ติตามข่าวสาร",
-            "uri": "https://line.me/R/ti/p/@xod8246n"
-          },
-          "color": "#0C0C0C",
-          "style": "primary"
-        }
-      ]
-    }
-  }
-}
 
+            "type": "template",
+
+            "altText": "this is a carousel template",
+
+            "template": {
+
+                "type": "carousel",
+
+                "columns": [{
+
+                    "title": "New Open Store",
+
+                    "text": "Opening Event",
+
+                    "actions": [
+
+                        {
+
+                            "type": "uri",
+
+                            "label": "LIFF APP",
+
+                            "uri": "line://app/1649301550-PL5ml2vO"
+
+                        }
+
+                    ],
+
+                    "thumbnailImageUrl": "https://ssl.pstatic.net/linefriends/wp-content/uploads/2017/03/char_choco_name.png"
+
+                }],
+
+                "imageAspectRatio": "rectangle"
+
+            }
+
+        }
     ]).then(function () {
 
             // window.alert("Message sent");
