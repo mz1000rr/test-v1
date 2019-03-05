@@ -185,113 +185,251 @@ function initializeApp(data) {
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([
- {
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
-      {
-        "thumbnailImageUrl": "https://www.printcafe.asia/wp-content/uploads/2018/06/kbank-icon.png",
-        "text": "ธนาคารกสิกรไทย",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "กสิกร  7482733810"
+{
+  "line": {
+    "type": "flex",
+    "altText": "ข้อความโฆษณา",
+    "contents": {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://f.ptcdn.info/801/022/000/1409170288-b60f8c1e0e-o.png",
-        "text": "ธนาคารกรุงเทพ",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "กรุงเทพ  1185039490"
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://www.isranews.org/images/thumbnails/images/2018/thaireform/08/scb2408-fill-500x500.jpg",
-        "text": "ธนาคารไทยพาณิชย์",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "ไทยพาณิชย์  1702519204"
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i0.wp.com/www.proppular.com/wp-content/uploads/2015/11/ktb-logo-1024x1024.jpg?resize=300,300&ssl=1",
-        "text": "ธนคารกรุงไทย",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "กรุงไทย  7680144273"
+        },
+        {
+          "type": "bubble",
+          "direction": "ltr",
+          "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สร้างโฆษณาของคุณด้วยข้อความที่โดดเด่นกว่า",
+                "align": "center",
+                "gravity": "top",
+                "weight": "bold",
+                "color": "#5B0C20",
+                "wrap": true
+              }
+            ]
+          },
+          "hero": {
+            "type": "image",
+            "url": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+            "size": "full",
+            "aspectRatio": "1.51:1",
+            "aspectMode": "fit"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "filler"
+              },
+              {
+                "type": "text",
+                "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+                "align": "center",
+                "weight": "bold",
+                "color": "#A12400",
+                "wrap": true
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "คลิก",
+                  "uri": "http://line.me/ti/p/~m-shop"
+                },
+                "color": "#851818",
+                "style": "primary"
+              }
+            ]
           }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://pbs.twimg.com/profile_images/936198120873930753/iyEeh0ga_400x400.jpg",
-        "text": "ธนาคารทหารไทย",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "ทหารไทย  2122187384"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://lh3.googleusercontent.com/ovSLL4E--Mo_nJg4XHE8k_9KYCpAbn6FB0FLMgzl6lyNubIJoJxdvWyEnM7sN02DD5I=s180-rw",
-        "text": "ธนาคารกรุงศรีฯ",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "กรุงศรีฯ  5221059314"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://www.mymobygsb.com/images/logo.png",
-        "text": "ธนาคารออมสิน",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "ออมสิน  020041983808"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://www.it24hrs.com/wp-content/uploads/2018/03/promptpay-update-stats-2018-p01.jpg",
-        "text": "PromptPay",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "PromptPay  0948296328"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://promotions.co.th/wp-content/uploads/TMN-Wallet-full-logo-696x464.jpg",
-        "text": "TrueMoney",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ดูหมายเลขบัญชี",
-            "text": "TrueMoney 0897706236"
-          }
-        ]
-      }
-    ]
+        }
+      ]
+    }
   }
 }
     ]).then(function () {
