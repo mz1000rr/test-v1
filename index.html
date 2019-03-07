@@ -7,9 +7,9 @@
 <body style="background-color: lightyellow">
     <div class="buttongroup">
         <div class="buttonrow">
-            <button id="openwindowbutton">Account Bank</button>
+            <button id="openwindowbutton">ฟังเพลง</button>
             <button id="closewindowbutton">Close Window</button>
-            <button id="freebutton">Free Sticker</button>
+            <button id="freebutton">ไฮไลท์บอล</button>
         </div>
         <div class="buttonrow">
             <button id="getaccesstoken">Get Access Token</button>
@@ -144,22 +144,182 @@ function initializeApp(data) {
     // openWindow call
     document.getElementById('openwindowbutton').addEventListener('click', function () {
         liff.sendMessages([ {
-    "type": "template",
-    "altText": "Account Bank",
-    "template": {
-      "type": "buttons",
-      "actions": [
-        {
-          "type": "uri",
-          "label": "คลิกดูภาพขยาย",
-          "uri": "line://app/1607014526-RrznEz6G"
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "header": {
+          "type": "box",
+          "layout": "horizontal",
+          "spacing": "xs",
+          "contents": [
+            {
+              "type": "text",
+              "text": "อะไรก็ยอม",
+              "margin": "none",
+              "size": "xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#030303",
+              "wrap": true
+            }
+          ]
+        },
+        "hero": {
+          "type": "image",
+          "url": "https://img.tnews.co.th/userfiles/images/2-354.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "fit",
+          "backgroundColor": "#000000"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/YouTube_play_buttom_icon_(2013-2017).svg/512px-YouTube_play_buttom_icon_(2013-2017).svg.png",
+              "margin": "none",
+              "aspectRatio": "1:1",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.youtube.com/watch?v=c31LQOCmLVU"
+              }
+            }
+          ]
         }
-      ],
-      "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/05/tYMo4Q.jpg",
-      "title": "เลขบัญชีธนาคาร",
-      "text": "ชื่อบัญชี ทอมสันติ์ อุนาพันธ์"
-    }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "คืนจันทร์",
+              "size": "xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#000000"
+            }
+          ]
+        },
+        "hero": {
+          "type": "image",
+          "url": "https://www.chordhit.com/wp-content/uploads/2017/08/เสก-โลโซ.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "fit",
+          "backgroundColor": "#000000"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/YouTube_play_buttom_icon_(2013-2017).svg/512px-YouTube_play_buttom_icon_(2013-2017).svg.png",
+              "aspectRatio": "1:1",
+              "aspectMode": "fit",
+              "backgroundColor": "#F9F9F9",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.youtube.com/watch?v=G2JFOEFmnnI"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เคยรักฉันบ้างไหม",
+              "size": "xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#030303"
+            }
+          ]
+        },
+        "hero": {
+          "type": "image",
+          "url": "https://music.mthai.com/app/uploads/2014/07/เสก-โลโซ-3.jpg",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "fit",
+          "backgroundColor": "#000000"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/YouTube_play_buttom_icon_(2013-2017).svg/512px-YouTube_play_buttom_icon_(2013-2017).svg.png",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.youtube.com/watch?v=eW0JA1fTjNg"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "เคยบอกว่ารักกัน",
+              "size": "xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#010101"
+            }
+          ]
+        },
+        "hero": {
+          "type": "image",
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFRU8_5d6KskFawJNbFvd3w5wzwCAnF60mFcWKvkOjjg6c07yLtw",
+          "size": "full",
+          "aspectRatio": "1:1",
+          "aspectMode": "fit",
+          "backgroundColor": "#000000"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/YouTube_play_buttom_icon_(2013-2017).svg/512px-YouTube_play_buttom_icon_(2013-2017).svg.png",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.youtube.com/watch?v=Xg-gZXEEwIs"
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
+}
     ]).then(function () {
             window.alert("Message sent success");
         }).catch(function (error) {
