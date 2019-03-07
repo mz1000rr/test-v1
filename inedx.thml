@@ -1,0 +1,383 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFF iton5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: lightyellow">
+    <div class="buttongroup">
+        <div class="buttonrow">
+            <button id="openwindowbutton">Account Bank</button>
+            <button id="closewindowbutton">Close Window</button>
+            <button id="freebutton">Free Sticker</button>
+        </div>
+        <div class="buttonrow">
+            <button id="getaccesstoken">Get Access Token</button>
+            <button id="getprofilebutton">Get Profile</button>
+            <button id="sendmessagebutton">iton5 Shop</button>
+        </div>
+        <div class="buttonrow">
+            <button id="othershop">other shop</button>
+            <button id="promotionbutton">promotion</button>
+            <button id="adsbutton">Sale ADS</button>
+        </div>
+    </div>
+
+    <div id="accesstokendata">
+        <h2>Access Token</h2>
+        <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
+        <table border="1">
+            <tr>
+                <th>accessToken</th>
+                <td id="accesstokenfield"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="profileinfo">
+        <h2>Profile</h2>
+        <a href="#" onclick="toggleProfileData()">Close Profile</a>
+        <div id="profilepicturediv">
+        </div>
+        <table border="1">
+            <tr>
+                <th>userId</th>
+                <td id="useridprofilefield"></td>
+            </tr>
+            <tr>
+                <th>displayName</th>
+                <td id="displaynamefield"></td>
+            </tr>
+            <tr>
+                <th>statusMessage</th>
+                <td id="statusmessagefield"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="liffdata">
+        <h2>LIFF Data</h2>
+        <table border="1">
+            <tr>
+                <th>language</th>
+                <td id="languagefield"></td>
+            </tr>
+            <tr>
+                <th>context.viewType</th>
+                <td id="viewtypefield"></td>
+            </tr>
+            <tr>
+                <th>context.userId</th>
+                <td id="useridfield"></td>
+            </tr>
+            <tr>
+                <th>context.utouId</th>
+                <td id="utouidfield"></td>
+            </tr>
+            <tr>
+                <th>context.roomId</th>
+                <td id="roomidfield"></td>
+            </tr>
+            <tr>
+                <th>context.groupId</th>
+                <td id="groupidfield"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script>
+        window.onload = function (e) {
+    liff.init(function (data) {
+        initializeApp(data);
+    });
+};
+function initializeApp(data) {
+    document.getElementById('languagefield').textContent = data.language;
+    document.getElementById('viewtypefield').textContent = data.context.viewType;
+    document.getElementById('useridfield').textContent = data.context.userId;
+    document.getElementById('utouidfield').textContent = data.context.utouId;
+    document.getElementById('roomidfield').textContent = data.context.roomId;
+    document.getElementById('groupidfield').textContent = data.context.groupId;
+       // openWindow call
+    document.getElementById('freebutton').addEventListener('click', function () {
+        liff.sendMessages([ {
+    "type": "template",
+    "altText": "free Sticker of the week",
+    "template": {
+      "type": "buttons",
+      "actions": [
+        {
+          "type": "uri",
+          "label": "ดูรายละเอียด Sticker",
+          "uri": "line://app/1607014526-x0vKgvzG"
+        }
+      ],
+      "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/02/12/TDSCeD.jpg",
+      "title": "Free Sticker LINE ประจำสัปดาห์",
+      "text": "แบบ VPN และ ลงทะเบียนเบอร์โทร"
+    }
+  }
+    ]).then(function () {
+            window.alert("Message sent success");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
+    });
+    // openWindow call
+    document.getElementById('openwindowbutton').addEventListener('click', function () {
+        liff.sendMessages([ {
+    "type": "template",
+    "altText": "Account Bank",
+    "template": {
+      "type": "buttons",
+      "actions": [
+        {
+          "type": "uri",
+          "label": "คลิกดูภาพขยาย",
+          "uri": "line://app/1607014526-RrznEz6G"
+        }
+      ],
+      "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/05/tYMo4Q.jpg",
+      "title": "เลขบัญชีธนาคาร",
+      "text": "ชื่อบัญชี ทอมสันติ์ อุนาพันธ์"
+    }
+  }
+    ]).then(function () {
+            window.alert("Message sent success");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
+    });
+    // closeWindow call
+    document.getElementById('closewindowbutton').addEventListener('click', function () {
+        liff.closeWindow();
+    });
+    // sendMessages call
+    document.getElementById('sendmessagebutton').addEventListener('click', function () {
+        liff.sendMessages([{
+    "type": "template",
+    "altText": "this is a carousel template",
+    "template": {
+      "type": "carousel",
+      "actions": [],
+      "columns": [
+        {
+          "thumbnailImageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13321/IOS/main_animation@2x.png",
+          "title": "ร้านค้าสติ๊กเกอร์ไลน์",
+          "text": "คลิ๊กดูรายละเอียดด้านล่าง",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "ร้านค้าในประเทศ",
+              "uri": "https://lin.ee/hQSPlTl/stdl/170826"
+            }
+          ]
+        },
+        {
+          "thumbnailImageUrl": "https://shop.line-scdn.net/themeshop/v1/products/e8/b7/67/e8b76711-9bb8-4b80-9212-2c8ca1430dee/12/WEBSTORE/icon_198x278.png?__=20161019",
+          "title": "ร้านค้าธีม",
+          "text": "คลิ๊กดูรายละเอียดด้านล่าง",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "ร้านค้าในประเทศ",
+              "uri": "https://lin.ee/eV0EfNN/crtw/tl"
+            }
+          ]
+        },
+        {
+          "thumbnailImageUrl": "https://stickershop.line-scdn.net/sticonshop/v1/product/5ac309f0031a6752fb806d8d/iphone/main.png",
+          "title": "ร้านค้าอิโมจิ",
+          "text": "คลิ๊กดูรายละเอียดด้านล่าง",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "ร้านค้าในประเทศ",
+              "uri": "https://lin.ee/1oZBrIx/sknj/Blog"
+            }
+          ]
+        },
+        {
+          "thumbnailImageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/1333442/IOS/main_animation@2x.png",
+          "title": "10 Coins",
+          "text": "Sticker LINE Indo",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "ดูรายละเอียด",
+              "uri": "line://app/1607014526-PJDb7DOJ"
+            },
+          ]
+        }
+      ]
+    }
+  }
+        ]).then(function () {
+            window.alert("Message sent success");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
+    });
+// sendMessages call
+    document.getElementById('othershop').addEventListener('click', function () {
+        liff.sendMessages([{
+    "type": "template",
+    "altText": "othershop by iton5",
+    "template": {
+      "type": "carousel",
+      "actions": [],
+      "columns": [
+        {
+          "thumbnailImageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13601/IOS/main_animation@2x.png",
+          "title": "ร้านค้าสติ๊กเกอร์ไลน์",
+          "text": "ลายต่างประเทศ",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "คลิก",
+              "uri": "line://app/1607014526-lp6rX6MA"
+            }
+          ]
+        },
+        {
+          "thumbnailImageUrl": "https://sdl-shop.line.naver.jp/themeshop/v1/products/17/27/7e/c17277e7-361f-4a54-ac4e-14a1bd43633a/1/WEBSTORE/icon_136x190.png",
+          "title": "ร้านค้าธีมไลน์",
+          "text": "ธีมต่างประเทศ",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "คลิก",
+              "uri": "line://app/1607014526-yWZD6ZrY"
+            }
+          ]
+        },
+        {
+          "thumbnailImageUrl": "https://stickershop.line-scdn.net/sticonshop/v1/product/5c6e430f040ab1dfabdbd3b6/iphone/main.png",
+          "title": "ร้านค้าอิโมจิ",
+          "text": "อิโมจิต่างประเทศ",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "คลิก",
+              "uri": "line://app/1607014526-5GYZlY4x"
+            }
+          ]
+        },
+        {
+          "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBR8TP.jpg",
+          "title": "หมวดหมู่",
+          "text": "กลุ่มสติ๊กเกอร์ต่างๆ",
+          "actions": [
+            {
+              "type": "uri",
+              "label": "ดูรายละเอียด",
+              "uri": "line://app/1607014526-J2e1Lexq"
+            },
+          ]
+        }
+      ]
+    }
+  }
+        ]).then(function () {
+            window.alert("Message sent success");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
+    });
+    // get access token
+    document.getElementById('getaccesstoken').addEventListener('click', function () {
+        const accessToken = liff.getAccessToken();
+        document.getElementById('accesstokenfield').textContent = accessToken;
+        toggleAccessToken();
+    });
+// openWindow call
+    document.getElementById('adsbutton').addEventListener('click', function () {
+        liff.sendMessages([ {
+  "type": "template",
+  "altText": "รับลงโฆษณาติดต่อ iton5",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBu3H0.jpg",
+        "title": "มาสร้างโฆษณาของคุณในรูปแบบใหม่",
+        "text": "ให้สินค้าของคุณโด่ดเด่นกว่าใคร",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "สนใจติดต่อ คลิก",
+            "uri": "https://line.me/ti/p/~iton5v3"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBu3H0.jpg",
+        "title": "มาสร้างโฆษณาของคุณในรูปแบบใหม่",
+        "text": "ให้สินค้าของคุณโด่ดเด่นกว่าใคร",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "สนใจติดต่อ คลิก",
+            "uri": "https://line.me/ti/p/~iton5v3"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBu3H0.jpg",
+        "title": "มาสร้างโฆษณาของคุณในรูปแบบใหม่",
+        "text": "ให้สินค้าของคุณโด่ดเด่นกว่าใคร",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "สนใจติดต่อ คลิก",
+            "uri": "https://line.me/ti/p/~iton5v3"
+          }
+        ]
+      }
+    ]
+  }
+}
+    ]).then(function () {
+            window.alert("Message sent success");
+        }).catch(function (error) {
+            window.alert("Error sending message: " + error);
+        });
+    });
+    // get profile call
+    document.getElementById('getprofilebutton').addEventListener('click', function () {
+        liff.getProfile().then(function (profile) {
+            document.getElementById('useridprofilefield').textContent = profile.userId;
+            document.getElementById('displaynamefield').textContent = profile.displayName;
+            const profilePictureDiv = document.getElementById('profilepicturediv');
+            if (profilePictureDiv.firstElementChild) {
+                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+            }
+            const img = document.createElement('img');
+            img.src = profile.pictureUrl;
+            img.alt = "Profile Picture";
+            profilePictureDiv.appendChild(img);
+            document.getElementById('statusmessagefield').textContent = profile.statusMessage;
+            toggleProfileData();
+        }).catch(function (error) {
+            window.alert("Error getting profile: " + error);
+        });
+    });
+}
+function toggleAccessToken() {
+    toggleElement('accesstokendata');
+}
+function toggleProfileData() {
+    toggleElement('profileinfo');
+}
+function toggleElement(elementId) {
+    const elem = document.getElementById(elementId);
+    if (elem.offsetWidth > 0 && elem.offsetHeight > 0) {
+        elem.style.display = "none";
+    } else {
+        elem.style.display = "block";
+    }
+}
+    </script>
+</body>
