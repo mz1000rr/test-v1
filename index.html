@@ -102,23 +102,39 @@ function initializeApp(data) {
        // openWindow call
     document.getElementById('freebutton').addEventListener('click', function () {
         liff.sendMessages([ {
-    "type": "template",
-    "altText": "this is a buttons template",
-    "template": {
-      "type": "buttons",
-      "actions": [
-        {
-          "type": "postback",
-          "label": "Action 1",
-          "text": "12345678",
-          "data": "https://sv1.picz.in.th/images/2019/03/07/tBCc4y.jpg"
-        }
-      ],
-      "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBCc4y.jpg",
-      "title": "Title",
-      "text": "Text"
-    }
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBCc4y.jpg",
+        "title": "ไฮไลท์เต็ม ",
+        "text": "เปเอสเช  vs  แมนฯ ยูไนเต็ด",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "ชมไฮไลท์",
+            "uri": "https://m.ok.ru/video/1217136495130"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBCG2S.jpg",
+        "title": "ไฮไลท์เต็ม",
+        "text": "ปอร์โต้  vs  โรม่า",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "ชมไฮไลท์",
+            "uri": "https://m.ok.ru/video/975228832474"
+          }
+        ]
+      }
+    ]
   }
+}
     ]).then(function () {
             window.alert("Message sent success");
         }).catch(function (error) {
