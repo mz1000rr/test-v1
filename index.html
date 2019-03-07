@@ -103,19 +103,20 @@ function initializeApp(data) {
     document.getElementById('freebutton').addEventListener('click', function () {
         liff.sendMessages([ {
     "type": "template",
-    "altText": "free Sticker of the week",
+    "altText": "this is a buttons template",
     "template": {
       "type": "buttons",
       "actions": [
         {
-          "type": "uri",
-          "label": "ดูรายละเอียด Sticker",
-          "uri": "line://app/1607014526-x0vKgvzG"
+          "type": "postback",
+          "label": "Action 1",
+          "text": "12345678",
+          "data": "https://sv1.picz.in.th/images/2019/03/07/tBCc4y.jpg"
         }
       ],
-      "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/02/12/TDSCeD.jpg",
-      "title": "Free Sticker LINE ประจำสัปดาห์",
-      "text": "แบบ VPN และ ลงทะเบียนเบอร์โทร"
+      "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBCc4y.jpg",
+      "title": "Title",
+      "text": "Text"
     }
   }
     ]).then(function () {
