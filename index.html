@@ -333,63 +333,51 @@ function initializeApp(data) {
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([{
-    "type": "template",
-    "altText": "this is a carousel template",
-    "template": {
-      "type": "carousel",
-      "actions": [],
-      "columns": [
-        {
-          "thumbnailImageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13321/IOS/main_animation@2x.png",
-          "title": "ร้านค้าสติ๊กเกอร์ไลน์",
-          "text": "คลิ๊กดูรายละเอียดด้านล่าง",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "ร้านค้าในประเทศ",
-              "uri": "https://lin.ee/hQSPlTl/stdl/170826"
-            }
-          ]
-        },
-        {
-          "thumbnailImageUrl": "https://shop.line-scdn.net/themeshop/v1/products/e8/b7/67/e8b76711-9bb8-4b80-9212-2c8ca1430dee/12/WEBSTORE/icon_198x278.png?__=20161019",
-          "title": "ร้านค้าธีม",
-          "text": "คลิ๊กดูรายละเอียดด้านล่าง",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "ร้านค้าในประเทศ",
-              "uri": "https://lin.ee/eV0EfNN/crtw/tl"
-            }
-          ]
-        },
-        {
-          "thumbnailImageUrl": "https://stickershop.line-scdn.net/sticonshop/v1/product/5ac309f0031a6752fb806d8d/iphone/main.png",
-          "title": "ร้านค้าอิโมจิ",
-          "text": "คลิ๊กดูรายละเอียดด้านล่าง",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "ร้านค้าในประเทศ",
-              "uri": "https://lin.ee/1oZBrIx/sknj/Blog"
-            }
-          ]
-        },
-        {
-          "thumbnailImageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/1333442/IOS/main_animation@2x.png",
-          "title": "10 Coins",
-          "text": "Sticker LINE Indo",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "ดูรายละเอียด",
-              "uri": "line://app/1607014526-PJDb7DOJ"
-            },
-          ]
-        }
-      ]
-    }
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "http://dl.stickershop.line.naver.jp/products/0/0/1/6812439/android/main.png",
+        "title": "พรรคอะไรดี",
+        "text": "50 เหรียญ",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "ดูสติ๊กเกอร์",
+            "uri": "https://line.me/S/sticker/6812439"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "http://dl.stickershop.line.naver.jp/products/0/0/1/6926246/android/main.png",
+        "title": "โลกสองใบ สำหรับคนไทย",
+        "text": "50 เหรียญ",
+        "actions": [
+          {
+            "type": "message",
+            "label": "ดูสติ๊กเกอร์",
+            "text": "https://line.me/S/sticker/6926246"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/02/08/Tq3uzq.png",
+        "title": "พื้นที่โฆษณา",
+        "text": "สนใจติดต่อโฆษณา ในรูปแบบ Flex ให้สินค้าของคุณเด่นกว่าใคร",
+        "actions": [
+          {
+            "type": "message",
+            "label": "ติดต่อโฆษณา",
+            "text": "http://line.me/ti/p/~m-shop"
+          }
+        ]
+      }
+    ]
   }
+}
         ]).then(function () {
             window.alert("Message sent success");
         }).catch(function (error) {
