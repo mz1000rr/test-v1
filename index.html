@@ -17,7 +17,7 @@
             <button id="sendmessagebutton">โฆษณา</button>
         </div>
         <div class="buttonrow">
-            <button id="othershop">other shop</button>
+            <button id="othershop">Sticker Uri</button>
             <button id="promotionbutton">promotion</button>
             <button id="adsbutton">Sale ADS</button>
         </div>
@@ -413,58 +413,88 @@ function initializeApp(data) {
     document.getElementById('othershop').addEventListener('click', function () {
         liff.sendMessages([{
     "type": "template",
-    "altText": "othershop by iton5",
+    "altText": "Sticker Update",
     "template": {
-      "type": "carousel",
-      "actions": [],
+      "type": "image_carousel",
       "columns": [
         {
-          "thumbnailImageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13601/IOS/main_animation@2x.png",
-          "title": "ร้านค้าสติ๊กเกอร์ไลน์",
-          "text": "ลายต่างประเทศ",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "คลิก",
-              "uri": "line://app/1607014526-lp6rX6MA"
-            }
-          ]
+          "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/160883032/ANDROID/sticker_animation.png",
+          "action": {
+            "type": "uri",
+            "label": "แตะที่ภาพ",
+            "uri": "line://shop/detail/3682827"
+          }
         },
         {
-          "thumbnailImageUrl": "https://sdl-shop.line.naver.jp/themeshop/v1/products/17/27/7e/c17277e7-361f-4a54-ac4e-14a1bd43633a/1/WEBSTORE/icon_136x190.png",
-          "title": "ร้านค้าธีมไลน์",
-          "text": "ธีมต่างประเทศ",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "คลิก",
-              "uri": "line://app/1607014526-yWZD6ZrY"
-            }
-          ]
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/11149/IOS/main_animation@2x.png",
+          "action": {
+            "type": "uri",
+            "uri": "line://shop/detail/11149"
+          }
         },
         {
-          "thumbnailImageUrl": "https://stickershop.line-scdn.net/sticonshop/v1/product/5c6e430f040ab1dfabdbd3b6/iphone/main.png",
-          "title": "ร้านค้าอิโมจิ",
-          "text": "อิโมจิต่างประเทศ",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "คลิก",
-              "uri": "line://app/1607014526-5GYZlY4x"
-            }
-          ]
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13561/IOS/main_popup.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/13561"
+          }
         },
         {
-          "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBR8TP.jpg",
-          "title": "หมวดหมู่",
-          "text": "กลุ่มสติ๊กเกอร์ต่างๆ",
-          "actions": [
-            {
-              "type": "uri",
-              "label": "ดูรายละเอียด",
-              "uri": "line://app/1607014526-J2e1Lexq"
-            },
-          ]
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/3682827/IOS/main_animation@2x.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/3682827"
+          }
+        },
+        {
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/11149/IOS/main_animation@2x.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/11149"
+          }
+        },
+        {
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13561/IOS/main_popup.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/13561"
+          }
+        },
+        {
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/3682827/IOS/main_animation@2x.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/3682827"
+          }
+        },
+        {
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/11149/IOS/main_animation@2x.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/11149"
+          }
+        },
+        {
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/13561/IOS/main_popup.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/13561"
+          }
+        },
+        {
+          "imageUrl": "https://sdl-stickershop.line.naver.jp/stickershop/v1/product/3682827/IOS/main_animation@2x.png",
+          "action": {
+            "type": "message",
+            "label": "แตะที่ภาพ",
+            "text": "line://shop/detail/3682827"
+          }
         }
       ]
     }
