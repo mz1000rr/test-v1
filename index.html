@@ -491,49 +491,78 @@ function initializeApp(data) {
 // openWindow call
     document.getElementById('adsbutton').addEventListener('click', function () {
         liff.sendMessages([ {
-  "type": "template",
-  "altText": "รับลงโฆษณาติดต่อ iton5",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
-      {
-        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBu3H0.jpg",
-        "title": "มาสร้างโฆษณาของคุณในรูปแบบใหม่",
-        "text": "ให้สินค้าของคุณโด่ดเด่นกว่าใคร",
-        "actions": [
-          {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "เพิ่มช่องทางการค้าขาย",
+          "size": "xl",
+          "align": "center",
+          "color": "#F00107"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://sv1.picz.in.th/images/2019/04/09/tLTi8R.jpg",
+      "size": "full",
+      "aspectRatio": "4:3",
+      "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "✅อยากเพิ่มช่องทางการโพสต์.. โฆษณาค้าขาย ในโลกOnline ที่มีฐานลูกค้าเห็นหน้าร้านของคุณ หลักหมื่น-หลักแสนคนในทุกๆวัน..",
+          "align": "start",
+          "wrap": true
+        },
+        {
+          "type": "text",
+          "text": "✅โพสต์โฆษณา ได้ไม่จำกัด ✅โพสต์ค้าขาย ได้ทุกชนิด เช่น ขายของ,ขายตรง,อสังหา, โฆษณาเว็บไซต์,และอื่นๆเป็นต้น",
+          "align": "start",
+          "wrap": true
+        },
+        {
+          "type": "text",
+          "text": "✅มีค่าใช้จ่าย เพียงครั้งเดียว  ",
+          "align": "start",
+          "wrap": true
+        },
+        {
+          "type": "text",
+          "text": "#ระวังมิจฉาชิพCopyข้อความ ของจริง LINE@ ให้บริการ.. ต้องมีผู้ติดตาม 8,000คนขึ้นไป!!",
+          "margin": "lg",
+          "gravity": "bottom",
+          "wrap": true
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
             "type": "uri",
-            "label": "สนใจติดต่อ คลิก",
-            "uri": "https://line.me/ti/p/~iton5v3"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBu3H0.jpg",
-        "title": "มาสร้างโฆษณาของคุณในรูปแบบใหม่",
-        "text": "ให้สินค้าของคุณโด่ดเด่นกว่าใคร",
-        "actions": [
-          {
-            "type": "uri",
-            "label": "สนใจติดต่อ คลิก",
-            "uri": "https://line.me/ti/p/~iton5v3"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://sv1.picz.in.th/images/2019/03/07/tBu3H0.jpg",
-        "title": "มาสร้างโฆษณาของคุณในรูปแบบใหม่",
-        "text": "ให้สินค้าของคุณโด่ดเด่นกว่าใคร",
-        "actions": [
-          {
-            "type": "uri",
-            "label": "สนใจติดต่อ คลิก",
-            "uri": "https://line.me/ti/p/~iton5v3"
-          }
-        ]
-      }
-    ]
+            "label": "รายละเอียดเพิ่มเติม",
+            "uri": "https://goo.gl/Jtqi8Q"
+          },
+          "color": "#1E5415",
+          "style": "primary"
+        }
+      ]
+    }
   }
 }
     ]).then(function () {
